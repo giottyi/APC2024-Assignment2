@@ -19,11 +19,15 @@ namespace convnet {
 
         /* YOUR CODE SHOULD GO HERE */
 
+		return weights.dot(inputs);
+
     };
 
     std::vector<double> fc_layer::forward_pass(const std::vector<double> &inputs) const {
 
         /* YOUR CODE SHOULD GO HERE */
+
+		return act_function.apply(compute(inputs));
 
     };
 

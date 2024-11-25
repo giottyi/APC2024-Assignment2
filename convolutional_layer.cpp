@@ -21,6 +21,27 @@ namespace convnet {
 
         /* YOUR CODE SHOULD GO HERE */
 
+		const std::size_t height_out = (inputs.get_height() - s_filter + 2 * s_padding) / s_stride + 1;
+        const std::size_t width_out = (inputs.get_width() - s_filter + 2 * s_padding) / s_stride + 1;
+        tensor_3d output(height_out, width_out, n_filters);
+        output.initialize_with_zeros();
+
+        const std::size_t filter_depth = inputs.get_depth(); // depths must match for a 2d filter
+        for(std::size_t i = 0; i < height_out; ++i) {
+            for(std::size_t j = 0; j < width_out; ++j) {
+                for(std::size_t k = 0; k < n_filters; ++k) {
+                    double result = 0.0;
+                    for(std::size_t h = 0; h < s_filter; ++h) {
+                        for(std::size_t w = 0; w < s_filter; ++w) {
+                            for(std::size_t d = 0; d < filter_depth; ++d) {
+                                result += inputs(i*s_stride+h,j*s_stride+w,d) * filters[k](h,w,d);
+                            }
+                        }
+                    } output(i,j,k) = result;
+                }
+            }
+        } return output;
+
     }
 
     tensor_3d convolutional_layer::apply_activation(const tensor_3d &Z) const {
@@ -30,6 +51,8 @@ namespace convnet {
     tensor_3d convolutional_layer::forward_pass(const tensor_3d &inputs) const {
 
         /* YOUR CODE SHOULD GO HERE */
+
+		return act_function.apply(evaluate(inputs));
 
     }
 
