@@ -23,7 +23,7 @@ namespace convnet {
 
     };
 
-    std::vector<double> fc_layer::forward_pass(const std::vector<double> &inputs) const {
+    std::vector<double> fc_layer::forward_pass(const std::vector<double> &inputs) const { 
 
         /* YOUR CODE SHOULD GO HERE */
 

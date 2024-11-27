@@ -48,7 +48,7 @@ namespace convnet {
         return act_function.apply(Z);
     }
 
-    tensor_3d convolutional_layer::forward_pass(const tensor_3d &inputs) const {
+    tensor_3d convolutional_layer::forward_pass(const tensor_3d &inputs) const { 
 
         /* YOUR CODE SHOULD GO HERE */
 
