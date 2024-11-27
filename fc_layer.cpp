@@ -27,7 +27,7 @@ namespace convnet {
 
         /* YOUR CODE SHOULD GO HERE */
 
-		return act_function.apply(compute(inputs));
+		return apply_activation(compute(inputs));
 
     };
 
