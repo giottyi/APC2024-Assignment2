@@ -1,3 +1,0 @@
-/Users/francesco/github/Assignment2_LeNet5/build/CMakeFiles/Assignment2_2024.dir
-/Users/francesco/github/Assignment2_LeNet5/build/CMakeFiles/edit_cache.dir
-/Users/francesco/github/Assignment2_LeNet5/build/CMakeFiles/rebuild_cache.dir

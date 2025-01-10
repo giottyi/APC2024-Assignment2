@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_compile_options(-Wall -O3 -march=native -ffast-math -funroll-loops)
+add_compile_options(-Wall -Wextra -O2)
 
 add_executable(Assignment2_2024
         cnn.cpp

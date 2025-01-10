@@ -4,8 +4,8 @@ namespace convnet {
 
     convolutional_layer::convolutional_layer(std::size_t _s_filter, std::size_t _prev_depth, std::size_t _n_filters,
                                              std::size_t _s_stride, std::size_t _s_padding)
-            : s_filter(_s_filter), prev_depth(_prev_depth), n_filters(_n_filters), s_stride(_s_stride),
-              s_padding(_s_padding) {
+            : s_filter(_s_filter), n_filters(_n_filters), s_stride(_s_stride),
+              s_padding(_s_padding), prev_depth(_prev_depth){
         initialize();
     }
 
